@@ -1,0 +1,65 @@
+$color-white: hsl(36, 100%, 99%);
+$color-glayish-blue: hsl(233, 8%, 79%);
+$color-black: hsl(240, 100%, 5%);
+$color-soft-red: hsl(5, 85%, 63%);
+$color-soft-orange: hsl(35, 77%, 62%);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin: 30px;
+}
+
+.new {
+  background-color: $color-black;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  h2 {
+    color: $color-soft-orange;
+  }
+
+  .newtopic {
+    flex: 1;
+    h3 {
+      color: $color-white;
+    }
+
+    p {
+      color: $color-glayish-blue;
+    }
+  }
+}
+
+// useing grid
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+
+  @media (max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero {
+    grid-column: 1/3;
+
+    .img {
+      max-width: 100%;
+      width: auto;
+    }
+  }
+
+  .new {
+    grid-column: 3/4;
+    grid-row: 1/3;
+  }
+}
